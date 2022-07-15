@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NotiX</string>
+    <string name="analytics_total">You got <b>180</b> notifications today</string>
+    <string name="analytics_spam">Out of these <font fgcolor='#FF0000'><b>25</b></font> were spam</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

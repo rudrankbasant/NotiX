@@ -42,7 +42,8 @@ class NotificationListener: NotificationListenerService() {
             newNotification.notification.extras.getString("android.title"),
             newNotification.notification.extras.getString("android.text"),
             newNotification.postTime,
-            newNotification.packageName)
+            newNotification.packageName,
+        false)
 
 
         runBlocking {

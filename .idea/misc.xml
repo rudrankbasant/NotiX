@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_baseline_arrow_back.xml" value="0.2255" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_baseline_arrow_forward.xml" value="0.2255" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_history.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_transactions.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/card_view.xml" value="0.2" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_analytics.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_conversations.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_history.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_transactions.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_history.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/shadow_background.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

@@ -23,4 +23,6 @@ interface NotixDao {
     @Query(value = "Select * from notix_table ")
     fun getAllNotifications(): LiveData<List<NotificationData>>
 
+
+
 }

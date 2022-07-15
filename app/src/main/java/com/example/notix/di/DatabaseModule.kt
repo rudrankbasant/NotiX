@@ -17,7 +17,6 @@ import javax.inject.Singleton
 object DatabaseModule {
 
 
-
     @Provides
     @Singleton
     fun provideNotixRepository(

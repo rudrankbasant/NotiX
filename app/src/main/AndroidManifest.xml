@@ -3,16 +3,28 @@
     package="com.example.notix">
 
     <application
-        android:name = ".di.NotixApplication"
+        android:name=".di.NotixApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:requestLegacyExternalStorage="true"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NotiX">
         <activity
-            android:name=".MainActivity"
+            android:name=".History"
+            android:exported="false" />
+        <activity
+            android:name=".Transactions"
+            android:exported="false" />
+        <activity
+            android:name=".Conversations"
+            android:exported="false" />
+        <activity
+            android:name=".Analytics"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,25 +33,22 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".NotificationListener"
+        <service
+            android:name=".NotificationListener"
+            android:exported="false"
             android:label="@string/app_name"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-            android:exported="false">
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.service.notification.default_filter_types"
-                android:value="conversations|alerting">
-            </meta-data>
+                android:value="conversations|alerting" />
             <meta-data
                 android:name="android.service.notification.disabled_filter_types"
-                android:value="ongoing|silent">
-            </meta-data>
+                android:value="ongoing|silent" />
         </service>
     </application>
-
-
-
 
 </manifest>

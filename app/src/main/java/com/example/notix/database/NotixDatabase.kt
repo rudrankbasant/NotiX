@@ -9,13 +9,13 @@ import androidx.room.RoomDatabase
 import com.example.notix.model.NotificationData
 
 
-@Database(entities = [NotificationData::class], version = 3, exportSchema = false)
+@Database(entities = [NotificationData::class], version = 4, exportSchema = false)
 abstract class NotixDatabase : RoomDatabase() {
 
 
     abstract fun getNotificationsDao(): NotixDao
 
-    companion object{
+    /*companion object{
 
         @Volatile
         private var INSTANCE: NotixDatabase?=null
@@ -33,5 +33,5 @@ abstract class NotixDatabase : RoomDatabase() {
             }
         }
 
-    }
+    }*/
 }
