@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.notix">
-    
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    package="com.dscvit.notix">
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:name=".di.NotixApplication"
@@ -52,10 +52,11 @@
                 android:value="ongoing|silent" />
         </service>
 
-        <receiver android:name=".receivers.MySMSBroadcastReceiver"
+        <receiver
+            android:name=".receivers.MySMSBroadcastReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
     </application>

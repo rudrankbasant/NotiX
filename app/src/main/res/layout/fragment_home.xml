@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.card.MaterialCardView
@@ -24,38 +24,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:fontFamily="@font/opensans_bold"
-            android:textSize="22sp"
+            android:padding="20dp"
+            android:text="Analytics"
             android:textColor="@color/black"
-            android:text="Analytics" />
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/opensans_regular"
-            android:textSize="22sp"
+            android:padding="20dp"
+            android:text="@string/analytics_total"
             android:textColor="@color/black"
-            android:text="@string/analytics_total" />
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="70dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/opensans_regular"
-            android:textSize="20sp"
+            android:padding="20dp"
+            android:text="@string/analytics_spam"
             android:textColor="@color/black"
-            android:text="@string/analytics_spam" />
+            android:textSize="20sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
             android:layout_marginStart="330dp"
+            android:layout_marginTop="22dp"
             android:src="@drawable/ic_baseline_arrow_forward" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -76,24 +76,25 @@
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
-        app:strokeWidth="1dp" >
+        app:strokeWidth="1dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="10dp"
             android:fontFamily="@font/opensans_bold"
-            android:textSize="16sp"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:text="Conversations"
             android:textColor="@color/black"
-            android:text="Conversations" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/conversationsForwardButton"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="135dp"
+            android:layout_marginTop="12dp"
             android:src="@drawable/ic_baseline_arrow_forward" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -112,24 +113,25 @@
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
-        app:strokeWidth="1dp" >
+        app:strokeWidth="1dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="10dp"
             android:fontFamily="@font/opensans_bold"
-            android:textSize="16sp"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:text="Transactions"
             android:textColor="@color/black"
-            android:text="Transactions" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/transactionsForwardButton"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="135dp"
+            android:layout_marginTop="12dp"
             android:src="@drawable/ic_baseline_arrow_forward" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -149,17 +151,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:fontFamily="@font/opensans_bold"
-            android:textSize="18sp"
+            android:padding="20dp"
+            android:text="Spam Notifications"
             android:textColor="@color/black"
-            android:text="Spam Notifications" />
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="330dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_baseline_arrow_forward" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -181,25 +183,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:fontFamily="@font/opensans_bold"
-            android:textSize="18sp"
+            android:padding="20dp"
+            android:text="Recent Notifications"
             android:textColor="@color/black"
-            android:text="Recent Notifications" />
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/recentsForwardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="330dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_baseline_arrow_forward" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:padding="25dp"/>
+            android:padding="25dp" />
 
 
     </com.google.android.material.card.MaterialCardView>

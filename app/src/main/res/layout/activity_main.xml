@@ -7,15 +7,15 @@
     tools:context=".ui.MainActivity">
 
 
-   <androidx.fragment.app.FragmentContainerView
-       android:id="@+id/fragmentContainerView"
-       android:name="androidx.navigation.fragment.NavHostFragment"
-       android:layout_width="409dp"
-       android:layout_height="729dp"
-       app:defaultNavHost="true"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:navGraph="@navigation/navigation" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

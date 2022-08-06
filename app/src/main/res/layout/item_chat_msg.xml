@@ -4,18 +4,19 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_marginTop="10dp"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@color/black"/>
+        android:layout_marginTop="10dp"
+        android:src="@color/black" />
+
     <TextView
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:text="This is a sample message"
-        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/chat_msg_bg"/>
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/chat_msg_bg"
+        android:text="This is a sample message"
+        android:textSize="20dp" />
 
 </androidx.cardview.widget.CardView>
 

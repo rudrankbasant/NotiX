@@ -1,4 +1,4 @@
-package com.example.notix
+package com.dscvit.notix
 
 import org.junit.Test
 

@@ -2,16 +2,20 @@
 
 ## Our Pledge
 
-A primary goal of DSC-VIT is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+A primary goal of DSC-VIT is to be inclusive to the largest number of contributors, with the most
+varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and
+welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity,
+socioeconomic status, and religion (or lack thereof).
 
-This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior.
+This code of conduct outlines our expectations for all those who participate in our community, as
+well as the consequences for unacceptable behavior.
 
-We invite all those who participate in DSC-VIT to help us create safe and positive experiences for everyone.
+We invite all those who participate in DSC-VIT to help us create safe and positive experiences for
+everyone.
 
 ## Our Standards
 
-Examples of behavior that contributes to creating a positive environment
-include:
+Examples of behavior that contributes to creating a positive environment include:
 
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints and experiences
@@ -21,52 +25,47 @@ include:
 
 Examples of unacceptable behavior by participants include:
 
-- The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
+- The use of sexualized language or imagery and unwelcome sexual attention or advances
 - Trolling, insulting/derogatory comments, and personal or political attacks
 - Public or private harassment
-- Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
+- Publishing others' private information, such as a physical or electronic address, without explicit
+  permission
 - Sharing critical Pentest findings with public or putting in an issue
 - DOS Attack on any of our subdomain (subdomain.dscvit.com)
 - Continous load testing is strictly not allowed
-- Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ## Our Responsibilities | Consequences of Unacceptable Behavior
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are
+expected to take appropriate and fair corrective action in response to any instances of unacceptable
+behavior.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits,
+code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or
+to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate,
 threatening, offensive, or harmful.
 
 ## Scope
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Representation of a project may be
-further defined and clarified by project maintainers.
+This Code of Conduct applies both within project spaces and in public spaces when an individual is
+representing the project or its community. Representation of a project may be further defined and
+clarified by project maintainers.
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at `contact@dscvit.com`. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting
+the project team at `contact@dscvit.com`. All complaints will be reviewed and investigated and will
+result in a response that is deemed necessary and appropriate to the circumstances. The project team
+is obligated to maintain confidentiality with regard to the reporter of an incident.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+Project maintainers who do not follow or enforce the Code of Conduct in good faith may face
+temporary or permanent repercussions as determined by other members of the project's leadership.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at https://www.contributor-covenant.org/version/1/4/code-of-conduct/
+This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4, available
+at https://www.contributor-covenant.org/version/1/4/code-of-conduct/
 
 [homepage]: https://www.contributor-covenant.org
 
