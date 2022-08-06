@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
-    app:cardElevation="50dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardElevation="50dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,50 +17,52 @@
 
         <ImageView
             android:id="@+id/conversDisplayPicture"
-            android:padding="15dp"
-            android:layout_marginTop="2.5dp"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:src="@drawable/ic_star"/>
+            android:layout_marginTop="2.5dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_star" />
+
         <LinearLayout
-            android:layout_marginTop="15dp"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/conversationName"
-                android:layout_marginStart="5dp"
-                android:paddingTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Martha John"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/opensans_regular"
+                android:paddingTop="2dp"
                 android:singleLine="true"
-                android:textStyle="bold"
+                android:text="Martha John"
+                android:textColor="@color/black"
                 android:textSize="17dp"
-                android:fontFamily="@font/opensans_regular" />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/conversationDesc"
-                android:layout_marginStart="5dp"
-                android:maxLines="1"
-                android:paddingTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hey, how have you been?"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/opensans_regular"
+                android:maxLines="1"
+                android:paddingTop="2dp"
                 android:singleLine="true"
-                android:textColor="@color/black"
-                android:fontFamily="@font/opensans_regular" />
+                android:text="Hey, how have you been?"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/pinIcon"
-            android:padding="5dp"
-            android:layout_marginTop="2.5dp"
             android:layout_width="40dp"
             android:layout_height="75dp"
-            android:src="@drawable/ic_unstar"/>
+            android:layout_marginTop="2.5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_unstar" />
 
 
     </LinearLayout>
