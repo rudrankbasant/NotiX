@@ -26,7 +26,7 @@ class HistoryFragment : Fragment(), UpDateNotificationInterface {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,7 +34,7 @@ class HistoryFragment : Fragment(), UpDateNotificationInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.analyticsBackButton.setOnClickListener{
+        binding.historyBackButton.setOnClickListener{
             view.findNavController().navigate(R.id.action_historyFragment_to_homeFragment)
         }
 
@@ -49,8 +49,6 @@ class HistoryFragment : Fragment(), UpDateNotificationInterface {
                 historyRVAdapter?.updateList(list)
             }
         }
-
-
     }
 
     override fun onDestroy() {

@@ -89,6 +89,7 @@
             android:text="Conversations" />
 
         <ImageView
+            android:id="@+id/conversationsForwardButton"
             android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_marginTop="12dp"
@@ -124,6 +125,7 @@
             android:text="Transactions" />
 
         <ImageView
+            android:id="@+id/transactionsForwardButton"
             android:layout_width="25dp"
             android:layout_height="20dp"
             android:layout_marginTop="12dp"

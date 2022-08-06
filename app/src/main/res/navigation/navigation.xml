@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/analyticsFragment"
-        android:name="com.example.notix.ui.AnalyticsFragment"
+        android:name="com.example.notix.ui.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/conversationsFragment"
-        android:name="com.example.notix.ui.ConversationsFragment"
+        android:name="com.example.notix.ui.conversations.ConversationsFragment"
         android:label="fragment_conversations"
         tools:layout="@layout/fragment_conversations" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/transactionsFragment"
-        android:name="com.example.notix.ui.TransactionsFragment"
+        android:name="com.example.notix.ui.transactions.TransactionsFragment"
         android:label="fragment_transactions"
         tools:layout="@layout/fragment_transactions" >
         <action

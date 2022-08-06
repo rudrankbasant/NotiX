@@ -5,18 +5,52 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.notix.R
+import com.example.notix.adapters.HistoryAdapter
+import com.example.notix.adapters.TransactionsAdapter
+import com.example.notix.databinding.FragmentHistoryBinding
+import com.example.notix.databinding.FragmentTransactionsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class TransactionsFragment : Fragment() {
 
+    private var _binding: FragmentTransactionsBinding? = null
+    private val binding get() = _binding!!
 
+    private val viewModel: TransactionsViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View{
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transactions, container, false)
+        _binding = FragmentTransactionsBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.transactionsBackButton.setOnClickListener{
+            view.findNavController().navigate(R.id.action_transactionsFragment_to_homeFragment)
+        }
+
+        //Transactions Recycler View
+        val transactionsRV = binding.transactionsRV
+        transactionsRV.layoutManager= LinearLayoutManager(activity)
+        val transactionsRVAdapter = context?.let { TransactionsAdapter(it) }
+        transactionsRV.adapter = transactionsRVAdapter
+
+        viewModel.allTransactions.observe(viewLifecycleOwner){ list ->
+            list?.let {
+                transactionsRVAdapter?.updateList(list)
+            }
+        }
+    }
+
+
 
 }

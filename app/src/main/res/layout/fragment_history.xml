@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/analyticsBackButton"
+        android:id="@+id/historyBackButton"
         android:layout_width="41dp"
         android:layout_height="49dp"
         android:layout_marginStart="15dp"
@@ -30,7 +30,7 @@
         android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/analyticsBackButton"
+        app:layout_constraintStart_toEndOf="@+id/historyBackButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView

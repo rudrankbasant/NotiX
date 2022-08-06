@@ -1,24 +1,21 @@
 package com.example.notix.adapters
 
 import android.content.Context
-import android.provider.ContactsContract
+import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notix.R
-import com.example.notix.database.NotixRepository
 import com.example.notix.model.NotificationData
-import com.example.notix.ui.history.HistoryViewModel
-import javax.inject.Inject
 
 
 class HistoryAdapter(
     val context: Context,
-    val upDateNotificationInterface: UpDateNotificationInterface
+    private val upDateNotificationInterface: UpDateNotificationInterface,
 ): RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 
 
@@ -30,7 +27,6 @@ class HistoryAdapter(
         val description = itemView.findViewById<TextView>(R.id.notificationDesc)
         val saveIcon = itemView.findViewById<ImageView>(R.id.saveIcon)
         val appIcon = itemView.findViewById<ImageView>(R.id.appIcon)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -39,10 +35,13 @@ class HistoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.appName.text = allDayNotifications[position].pkgName
+        var pkgArray = allDayNotifications[position].pkgName.split(".").toTypedArray()
+        holder.appName.text = pkgArray[pkgArray.size-1]
         holder.title.text = allDayNotifications[position].title
         holder.description.text = allDayNotifications[position].desc
-        holder.time.text = allDayNotifications[position].postedTime.toString()
+        holder.time.text = allDayNotifications[position].postedTime.slice(0..4)
+
+
         updateSavedIcon(holder,position)
         holder.saveIcon.setOnClickListener {
             val tempNotificationData = allDayNotifications[position]
@@ -52,6 +51,13 @@ class HistoryAdapter(
         }
 
 
+        try {
+            val drawable: Drawable = context.packageManager
+                .getApplicationIcon(allDayNotifications[position].pkgName)
+            holder.appIcon.setImageDrawable(drawable)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
     }
 
     override fun getItemCount(): Int {
