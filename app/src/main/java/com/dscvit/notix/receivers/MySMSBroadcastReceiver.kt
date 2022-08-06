@@ -9,7 +9,6 @@ import android.util.Log
 import com.dscvit.notix.database.NotixRepository
 import com.dscvit.notix.model.TransactionData
 import dagger.hilt.android.AndroidEntryPoint
-import hilt_aggregated_deps._dagger_hilt_android_internal_managers_FragmentComponentManager_FragmentComponentBuilderEntryPoint
 import kotlinx.coroutines.runBlocking
 import java.util.*
 import java.util.regex.Matcher
@@ -66,16 +65,16 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         Log.d("MERCHANT NAME", merchant.group(0))*/
         //extractMerchantNameFromSMS(body)
         //val regEx: Pattern = Pattern.compile("[rR][sS]\\.?\\s[,\\d]+\\.?\\d{0,2}|[iI][nN][rR]\\.?\\s*[,\\d]+\\.?\\d{0,2}")
-        val regEx: Pattern = Pattern.compile("[rR][sS](\\\\s*.\\\\s*\\\\d*)")
+        //val regEx: Pattern = Pattern.compile("[rR][sS](\\\\s*.\\\\s*\\\\d*)")
         // Find instance of pattern matches
-        val m: Matcher = regEx.matcher(body)
+        /*val m: Matcher = regEx.matcher(body)
         Log.d("amount_value= ", "" + m)
         var amount = m.group(0).replace("inr".toRegex(), "")
         amount = amount.replace("rs".toRegex(), "")
         amount = amount.replace("inr".toRegex(), "")
         amount = amount.replace(" ".toRegex(), "")
-        amount = amount.replace(",".toRegex(), "")
-        Log.d("AMOUNT BITCH", amount)
+        amount = amount.replace(",".toRegex(), "")*/
+        //Log.d("AMOUNT ", amount)
 
 
 

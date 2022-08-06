@@ -6,20 +6,27 @@ import com.dscvit.notix.utils.Constants.SPAM_POINT
 import org.tensorflow.lite.support.label.Category
 
 object SpamClassifier {
-    fun spamClassifyMessage(context: Context, message: String) : Boolean {
+    fun spamClassifyMessage(context: Context, message: String): Float {
         // Loading the ML model for spam detection
         val client = SpamClassificationClient(context)
         client.load()
 
         // Predicts if the notification is a spam notification
-        var isSpam = false
+
+        var score = 0.0f
         if (message.trim() != "") {
             val results: List<Category> = client.classify(message)
-            val score = results[1].score
+            score = results[1].score
             Log.d("SPAM_SCORE", score.toString())
-            if (score > SPAM_POINT) {
-                isSpam = true
-            }
+
+        }
+        return score
+    }
+
+    fun isSpam(score: Float): Boolean {
+        var isSpam = false
+        if (score > SPAM_POINT) {
+            isSpam = true
         }
         return isSpam
     }

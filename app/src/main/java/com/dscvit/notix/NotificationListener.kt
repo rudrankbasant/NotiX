@@ -5,15 +5,13 @@ import android.service.notification.StatusBarNotification
 import android.util.Log
 import com.dscvit.notix.database.NotixRepository
 import com.dscvit.notix.model.NotificationData
+import com.dscvit.notix.utils.SpamClassifier.isSpam
 import com.dscvit.notix.utils.SpamClassifier.spamClassifyMessage
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.runBlocking
-import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -37,7 +35,9 @@ class NotificationListener : NotificationListenerService() {
         }
 
         // Classify the notification
-        val isSpam: Boolean = spamClassifyMessage(this, message)
+        val spamScore = spamClassifyMessage(this, message)
+        val isSpam = isSpam(spamScore)
+
 
         var millis = newNotification.postTime
 
@@ -53,6 +53,7 @@ class NotificationListener : NotificationListenerService() {
                     "\n" + "tickerText: " + newNotification.notification.tickerText +
                     "\n" + "postedTime: " + newNotification.postTime +
                     "\n" + "packageName: " + newNotification.packageName +
+                    "\n" + "spam score: " + spamScore.toString() +
                     "\n" + "isSpam: " + isSpam.toString()
 
             /*"-------- onNotificationPosted(): " + "ID :" + newNotification.id +
@@ -72,7 +73,8 @@ class NotificationListener : NotificationListenerService() {
                 .withZone(ZoneId.of("IST"))
                 .format(Instant.ofEpochMilli(millis)),
             newNotification.packageName,
-            false
+            false,
+            spamScore
         )
 
         runBlocking {

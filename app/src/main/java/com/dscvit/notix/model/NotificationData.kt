@@ -11,7 +11,8 @@ data class NotificationData(
     val desc: String?,
     val postedTime: String,
     val pkgName: String,
-    var saved: Boolean
+    var saved: Boolean,
+    var spamScore: Float
 ) {
     @PrimaryKey(autoGenerate = true)
     var primaryKey = 0

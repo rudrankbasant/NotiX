@@ -1,9 +1,7 @@
 package com.dscvit.notix.ui.history
 
 import android.app.Application
-import android.provider.ContactsContract
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.dscvit.notix.database.NotixRepository
 import com.dscvit.notix.model.NotificationData

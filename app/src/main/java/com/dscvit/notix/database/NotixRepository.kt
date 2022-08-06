@@ -1,6 +1,5 @@
 package com.dscvit.notix.database
 
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import com.dscvit.notix.model.NotificationData
 import com.dscvit.notix.model.TransactionData

@@ -1,12 +1,9 @@
 package com.dscvit.notix.database
 
-import android.app.Notification
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.dscvit.notix.model.NotificationData
 import com.dscvit.notix.model.TransactionData
-import dagger.Provides
 
 @Dao
 interface NotixDao {
@@ -24,7 +21,7 @@ interface NotixDao {
     @Query(value = "Select * from notix_table ")
     fun getAllNotifications(): LiveData<List<NotificationData>>
 
-    @Query(value = "Select DISTINCT * from notix_table WHERE pkgName == 'com.whatsapp'")
+    @Query(value = "Select * from notix_table WHERE pkgName == 'com.whatsapp' AND primaryKey IN (SELECT MAX(primaryKey) FROM notix_table GROUP BY title)")
     fun getAllUniqueConversation(): LiveData<List<NotificationData>>
 
     //Transaction

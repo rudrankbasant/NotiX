@@ -1,10 +1,6 @@
 package com.dscvit.notix.database
 
-import android.content.Context
-import android.provider.ContactsContract
-import androidx.room.Dao
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.dscvit.notix.model.NotificationData
 import com.dscvit.notix.model.TransactionData
@@ -12,7 +8,7 @@ import com.dscvit.notix.model.TransactionData
 
 @Database(
     entities = [NotificationData::class, TransactionData::class],
-    version = 6,
+    version = 1,
     exportSchema = false
 )
 abstract class NotixDatabase : RoomDatabase() {
