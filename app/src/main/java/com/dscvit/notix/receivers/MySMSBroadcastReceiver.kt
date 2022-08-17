@@ -15,6 +15,7 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 import javax.inject.Inject
 
+/*
 @AndroidEntryPoint
 class MySMSBroadcastReceiver : BroadcastReceiver() {
 
@@ -47,6 +48,8 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         parseSMS(body)
     }
 
+
+
     private fun parseSMS(body: String) {
         var flag = true
         Log.d("THE FLAG BEFORE", flag.toString())
@@ -59,24 +62,28 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         } else {
             flag = false
         }
+        var test = "watching tv (at home)"
+        test = test.replace("\\p{P}","")
 
-        /*val merchantNameRegEx = Pattern.compile("(?i)(?:\\sat\\s|in\\*)([A-Za-z0-9]*\\s?-?\\s?[A-Za-z0-9]*\\s?-?\\.?)")
+        */
+/*val merchantNameRegEx = Pattern.compile("(?i)(?:\\sat\\s|in\\*)([A-Za-z0-9]*\\s?-?\\s?[A-Za-z0-9]*\\s?-?\\.?)")
         val merchant: Matcher = merchantNameRegEx.matcher(body)
-        Log.d("MERCHANT NAME", merchant.group(0))*/
+        Log.d("MERCHANT NAME", merchant.group(0))*//*
+
         //extractMerchantNameFromSMS(body)
         //val regEx: Pattern = Pattern.compile("[rR][sS]\\.?\\s[,\\d]+\\.?\\d{0,2}|[iI][nN][rR]\\.?\\s*[,\\d]+\\.?\\d{0,2}")
         //val regEx: Pattern = Pattern.compile("[rR][sS](\\\\s*.\\\\s*\\\\d*)")
         // Find instance of pattern matches
-        /*val m: Matcher = regEx.matcher(body)
+        */
+/*val m: Matcher = regEx.matcher(body)
         Log.d("amount_value= ", "" + m)
         var amount = m.group(0).replace("inr".toRegex(), "")
         amount = amount.replace("rs".toRegex(), "")
         amount = amount.replace("inr".toRegex(), "")
         amount = amount.replace(" ".toRegex(), "")
-        amount = amount.replace(",".toRegex(), "")*/
+        amount = amount.replace(",".toRegex(), "")*//*
+
         //Log.d("AMOUNT ", amount)
-
-
 
         Log.d("THE FLAG", flag.toString())
         if (flag) {
@@ -107,4 +114,4 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         }
     }
 
-}
+}*/

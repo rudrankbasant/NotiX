@@ -76,7 +76,13 @@ dependencies {
 
     // Tensorflow Lite
     implementation 'org.tensorflow:tensorflow-lite-task-text:0.3.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    implementation 'androidx.lifecycle:lifecycle-service:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
 }
 
 kapt {

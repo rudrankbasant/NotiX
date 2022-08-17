@@ -16,7 +16,9 @@ class HistoryViewModel @Inject constructor(
     private val repository: NotixRepository
 ) : AndroidViewModel(application) {
 
-    val allNotifications = repository.allNotifications
+    var allNotifications = repository.allNotifications
+    var allSavedNotifications = repository.allSavedNotifications
+    var allSpam = repository.allSpam
 
     fun update(notificationData: NotificationData) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(notificationData)

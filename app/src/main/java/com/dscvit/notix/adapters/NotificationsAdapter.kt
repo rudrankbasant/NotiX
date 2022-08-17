@@ -13,10 +13,10 @@ import com.dscvit.notix.R
 import com.dscvit.notix.model.NotificationData
 
 
-class HistoryAdapter(
+class NotificationsAdapter(
     val context: Context,
     private val upDateNotificationInterface: UpDateNotificationInterface,
-) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<NotificationsAdapter.ViewHolder>() {
 
 
     private var allDayNotifications = ArrayList<NotificationData>()
@@ -43,6 +43,12 @@ class HistoryAdapter(
         holder.description.text = allDayNotifications[position].desc
         holder.time.text = allDayNotifications[position].postedTime.slice(0..4)
 
+        if(allDayNotifications[position].desc?.contains("x.gdscSender.x") == true){
+            val seperatedDesc = allDayNotifications[position].desc?.split("x.gdscSender.x")
+            holder.description.text = seperatedDesc?.get(0)
+        }else{
+            holder.description.text = allDayNotifications[position].desc
+        }
 
         updateSavedIcon(holder, position)
         holder.saveIcon.setOnClickListener {

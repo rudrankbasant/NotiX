@@ -6,11 +6,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.dscvit.notix.NotificationListener
 import com.dscvit.notix.R
+import com.dscvit.notix.services.NotificationListener
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,12 +26,13 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
 
-        val permissionss: String = (android.Manifest.permission.RECEIVE_SMS)
-        ActivityCompat.requestPermissions(this@MainActivity, arrayOf(permissionss), 200)
+        //val permissionss: String = (android.Manifest.permission.RECEIVE_SMS)
+        //ActivityCompat.requestPermissions(this@MainActivity, arrayOf(permissionss), 200)
         if (!isNotificationServiceEnable(this)) {
             val intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
             startActivity(intent)
         }
+        //startService(Intent(this, NotificationListener::class.java))
 
 
     }

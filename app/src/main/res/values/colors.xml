@@ -8,4 +8,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#4DED30</color>
+    <color name="red">#FF0000</color>
+    
+    
+    <color name="orange_foreground">#FFB200</color>
+    <color name="orange_background">#FFF5CC</color>
+
+    <color name="green_foreground">#52FF00</color>
+    <color name="green_background">#D7FED9</color>
+
+    <color name="blue_foreground">#4339F2</color>
+    <color name="blue_background">#DAD7FE</color>
+
+    <color name="red_foreground">#FF3A29</color>
+    <color name="red_background">#FFE5D3</color>
 </resources>

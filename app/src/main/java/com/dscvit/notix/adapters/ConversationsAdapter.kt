@@ -11,7 +11,8 @@ import com.dscvit.notix.R
 import com.dscvit.notix.model.NotificationData
 
 class ConversationsAdapter(
-    val context: Context
+    val context: Context,
+    private val conversationsClickInterface: ConversationsClickInterface,
 ) : RecyclerView.Adapter<ConversationsAdapter.ViewHolder>() {
 
     val allConversations = ArrayList<NotificationData>()
@@ -31,7 +32,18 @@ class ConversationsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.username.text = allConversations[position].title
-        holder.desc.text = allConversations[position].desc
+        if(allConversations[position].desc?.contains("x.gdscSender.x") == true){
+            val seperatedDesc = allConversations[position].desc?.split("x.gdscSender.x")
+            holder.desc.text = seperatedDesc?.get(0)
+        }else{
+            holder.desc.text = allConversations[position].desc
+        }
+        holder.itemView.setOnClickListener{
+            conversationsClickInterface.onConversationsClick(allConversations[position])
+        }
+
+
+
     }
 
     override fun getItemCount(): Int {
@@ -43,4 +55,8 @@ class ConversationsAdapter(
         allConversations.addAll(newList)
         notifyDataSetChanged()
     }
+}
+
+interface  ConversationsClickInterface{
+    fun onConversationsClick(selectedConversation : NotificationData)
 }

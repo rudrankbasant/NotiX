@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_homeFragment_to_transactionsFragment"
             app:destination="@id/transactionsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_spamFragment"
+            app:destination="@id/spamFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_savedNotifications"
+            app:destination="@id/savedNotifications" />
     </fragment>
     <fragment
         android:id="@+id/analyticsFragment"
@@ -49,6 +55,9 @@
         <action
             android:id="@+id/action_conversationsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_conversationsFragment_to_chatMessages"
+            app:destination="@id/chatMessages" />
     </fragment>
     <fragment
         android:id="@+id/transactionsFragment"
@@ -58,5 +67,32 @@
         <action
             android:id="@+id/action_transactionsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNotifications"
+        android:name="com.dscvit.notix.ui.history.SavedNotifications"
+        android:label="fragment_saved_notifications"
+        tools:layout="@layout/fragment_saved_notifications" >
+        <action
+            android:id="@+id/action_savedNotifications_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spamFragment"
+        android:name="com.dscvit.notix.ui.spam.SpamFragment"
+        android:label="fragment_spam"
+        tools:layout="@layout/fragment_spam" >
+        <action
+            android:id="@+id/action_spamFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatMessages"
+        android:name="com.dscvit.notix.ui.conversations.ChatMessages"
+        android:label="fragment_chat_messages"
+        tools:layout="@layout/fragment_chat_messages" >
+        <action
+            android:id="@+id/action_chatMessages_to_conversationsFragment"
+            app:destination="@id/conversationsFragment" />
     </fragment>
 </navigation>
