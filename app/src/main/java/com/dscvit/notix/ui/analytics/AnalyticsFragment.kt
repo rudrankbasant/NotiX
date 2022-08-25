@@ -1,13 +1,12 @@
 package com.dscvit.notix.ui.analytics
 
 
-
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
@@ -28,7 +27,6 @@ import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 @AndroidEntryPoint
@@ -50,6 +48,12 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val statusBar = context?.let { ContextCompat.getColor(it, R.color.bg_color) }
+        if(statusBar!=null){
+            activity?.window?.statusBarColor = statusBar
+        }
+
 
         binding.analyticsBackButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_analyticsFragment_to_homeFragment)
@@ -76,26 +80,26 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
         analyticsRV.layoutManager = LinearLayoutManager(activity)
         analyticsRVAdapter = context?.let { AnalyticsAdapter(it) }
         analyticsRV.adapter = analyticsRVAdapter
-        setBarChart(selectedDate,analyticsRVAdapter)
+        setBarChart(selectedDate, analyticsRVAdapter)
 
     }
 
     fun setBarChart(selectedDate: LocalDate?, analyticsRVAdapter: AnalyticsAdapter?) {
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-        if(selectedDate!=null){
-            val theSelectedDate : String = selectedDate.format(formatter)
+        if (selectedDate != null) {
+            val theSelectedDate: String = selectedDate.format(formatter)
             viewModel.getTodayTopApps(theSelectedDate).observe(viewLifecycleOwner) { list ->
                 list?.let {
-                    if(list.isNotEmpty()){
+                    if (list.isNotEmpty()) {
                         binding.barChartLayoutAnalytics.visibility = View.VISIBLE
                         binding.noDataAvailableTV.visibility = View.INVISIBLE
-                        if(list.size>=4){
-                            analyticsRVAdapter?.updateList(list.subList(0,4))
-                        }else{
-                            analyticsRVAdapter?.updateList(list.subList(0,list.size))
+                        if (list.size >= 4) {
+                            analyticsRVAdapter?.updateList(list.subList(0, 4))
+                        } else {
+                            analyticsRVAdapter?.updateList(list.subList(0, list.size))
                         }
 
-                    }else{
+                    } else {
                         binding.barChartLayoutAnalytics.visibility = View.INVISIBLE
                         binding.noDataAvailableTV.visibility = View.VISIBLE
                     }
@@ -105,10 +109,10 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
         }
     }
 
-    private fun setInsights(date: LocalDate?){
-        if(date!=null){
+    private fun setInsights(date: LocalDate?) {
+        if (date != null) {
             val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-            val theSelectedDate : String = date.format(formatter)
+            val theSelectedDate: String = date.format(formatter)
             viewModel.getTotalTodayNotifs(theSelectedDate).observe(viewLifecycleOwner) { list ->
                 list?.let {
                     binding.totalNotifAnalytics.text = list.size.toString()
@@ -139,7 +143,7 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
 
         val days: ArrayList<LocalDate?>? = daysInWeekArray(selectedDate)
         binding.monthYearTV.text = monthYearFromDate(selectedDate)
-        val calendarAdapter = context?.let { CalendarAdapter(it,days, this) }
+        val calendarAdapter = context?.let { CalendarAdapter(it, days, this) }
         val layoutManager: RecyclerView.LayoutManager =
             GridLayoutManager(context, 7)
         binding.calendarRecyclerView.layoutManager = layoutManager
@@ -207,7 +211,7 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
     private fun setMonthView() {
         binding.monthYearTV.text = monthYearFromDate(selectedDate)
         val daysInMonth: ArrayList<LocalDate?>? = daysInMonthArray(selectedDate)
-        val calendarAdapter = context?.let { CalendarAdapter(it,daysInMonth, this) }
+        val calendarAdapter = context?.let { CalendarAdapter(it, daysInMonth, this) }
         val layoutManager: RecyclerView.LayoutManager =
             GridLayoutManager(context, 7)
         binding.calendarRecyclerView.layoutManager = layoutManager
@@ -239,15 +243,15 @@ class AnalyticsFragment : Fragment(), OnDateClickInterface {
     }
 
     private fun getDay(i: Int): String {
-        val remainder = i%7
-        return when(remainder){
-            1->"S"
-            2->"M"
-            3->"T"
-            4->"W"
-            5->"T"
-            6->"F"
-            else->"S"
+        val remainder = i % 7
+        return when (remainder) {
+            1 -> "S"
+            2 -> "M"
+            3 -> "T"
+            4 -> "W"
+            5 -> "T"
+            6 -> "F"
+            else -> "S"
         }
     }
 

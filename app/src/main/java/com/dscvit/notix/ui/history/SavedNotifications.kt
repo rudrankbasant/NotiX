@@ -1,10 +1,11 @@
 package com.dscvit.notix.ui.history
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +34,12 @@ class SavedNotifications : Fragment(), UpDateNotificationInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val statusBar = context?.let { ContextCompat.getColor(it, R.color.bg_color2) }
+        if(statusBar!=null){
+            activity?.window?.statusBarColor = statusBar
+        }
+
+
         binding.savedBackButton.setOnClickListener {
             findNavController().navigate(R.id.action_savedNotifications_to_homeFragment)
         }
@@ -42,9 +49,16 @@ class SavedNotifications : Fragment(), UpDateNotificationInterface {
         savedRV.layoutManager = LinearLayoutManager(activity)
         val savedRVAdapter = context?.let { NotificationsAdapter(it, this) }
         savedRV.adapter = savedRVAdapter
-        viewModel.allSavedNotifications .observe(viewLifecycleOwner) { list ->
+        viewModel.allSavedNotifications.observe(viewLifecycleOwner) { list ->
             list?.let {
-                savedRVAdapter?.updateList(list.reversed())
+                if(list.isEmpty()){
+                    binding.defaultSavedText.visibility  = View.VISIBLE
+                    savedRVAdapter?.updateList(list.reversed())
+                }else{
+                    binding.defaultSavedText.visibility = View.GONE
+                    savedRVAdapter?.updateList(list.reversed())
+                }
+
             }
         }
     }

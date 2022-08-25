@@ -1,14 +1,5 @@
 package com.dscvit.notix.services
 
-import android.app.PendingIntent
-import android.app.Service
-import android.content.Intent
-import android.os.IBinder
-import androidx.core.app.NotificationCompat
-import com.dscvit.notix.R
-import com.dscvit.notix.ui.MainActivity
-import com.dscvit.notix.utils.Constants
-
 
 /*
 class MyForegroundService : Service() {

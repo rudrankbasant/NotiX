@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.dscvit.notix.R
 import com.dscvit.notix.model.AnalyticsResponse
-import kotlin.math.max
+import java.lang.Exception
 
 
 class AnalyticsAdapter(
@@ -22,8 +22,9 @@ class AnalyticsAdapter(
 ) : RecyclerView.Adapter<AnalyticsAdapter.ViewHolder>() {
 
     private var allTopAppsToday = ArrayList<AnalyticsResponse>()
-    var parentWidth= 1
+    var parentWidth = 1
     var maxXAxisScale = 1
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val appName = itemView.findViewById<TextView>(R.id.appNameAnalytics)
         val numberOfNotifications = itemView.findViewById<TextView>(R.id.analyticsNumber)
@@ -34,7 +35,8 @@ class AnalyticsAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.itemview_analytics, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.itemview_analytics, parent, false)
         parentWidth = getPatentWidth(parent)
         return ViewHolder(itemView)
     }
@@ -46,13 +48,19 @@ class AnalyticsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val maxDataValue = allTopAppsToday[0].myCount
-        maxXAxisScale = (maxDataValue + (5-(maxDataValue%5)))*2
+        maxXAxisScale = (maxDataValue + (5 - (maxDataValue % 5))) * 2
         var pkgArray = allTopAppsToday[position].pkgName.split(".").toTypedArray()
-        holder.appName.text = pkgArray[pkgArray.size - 1]
+        val pkgName = allTopAppsToday[position].pkgName
+        val packageManager = context.packageManager
+        holder.appName.text = try {
+            packageManager.getApplicationLabel(packageManager.getApplicationInfo(pkgName, PackageManager.GET_META_DATA))
+        }catch (e: Exception){
+            Log.e("Application Name not found", e.toString())
+        }.toString()
         holder.numberOfNotifications.text = allTopAppsToday[position].myCount.toString()
         var foreground = "#FFB200"
         var background = "#FFF5CC"
-        when (position%4) {
+        when (position % 4) {
             1 -> {
                 foreground = "#52FF00"
                 background = "#D7FED9"
@@ -71,10 +79,10 @@ class AnalyticsAdapter(
             }
         }
         var layoutParams = holder.foregroundCard.layoutParams
-        layoutParams.width = allTopAppsToday[position].myCount * (parentWidth/maxXAxisScale)
+        layoutParams.width = allTopAppsToday[position].myCount * (parentWidth / maxXAxisScale)
         holder.foregroundCard.layoutParams = layoutParams
-        holder.foregroundCard.setCardBackgroundColor(Color.parseColor(foreground))
-        holder.backgroundCard.setCardBackgroundColor(Color.parseColor(background))
+        //holder.foregroundCard.setCardBackgroundColor(Color.parseColor(foreground))
+        //holder.backgroundCard.setCardBackgroundColor(Color.parseColor(background))
 
         try {
             val drawable: Drawable = context.packageManager

@@ -1,20 +1,5 @@
 package com.dscvit.notix.receivers
 
-import android.content.BroadcastReceiver
-import android.content.ContentValues
-import android.content.Context
-import android.content.Intent
-import android.telephony.SmsMessage
-import android.util.Log
-import com.dscvit.notix.database.NotixRepository
-import com.dscvit.notix.model.TransactionData
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.runBlocking
-import java.util.*
-import java.util.regex.Matcher
-import java.util.regex.Pattern
-import javax.inject.Inject
-
 /*
 @AndroidEntryPoint
 class MySMSBroadcastReceiver : BroadcastReceiver() {

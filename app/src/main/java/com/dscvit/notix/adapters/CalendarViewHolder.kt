@@ -10,11 +10,10 @@ import com.dscvit.notix.R
 class CalendarViewHolder(
     itemView: View,
 
-) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
     var dateOfMonth: TextView? = null
     var dayOfMonth: TextView? = null
-
 
 
     init {

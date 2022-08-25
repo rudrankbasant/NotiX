@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/bg_color"
     app:cardCornerRadius="10dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
@@ -15,19 +16,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/conversDisplayPicture"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginTop="2.5dp"
+            android:visibility="gone"
             android:padding="15dp"
-            android:src="@drawable/ic_star" />
+            android:src="@drawable/ic_star" />-->
 
         <LinearLayout
+            android:layout_marginStart="5dp"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.47">
 
             <TextView
                 android:id="@+id/conversationName"
@@ -38,9 +46,9 @@
                 android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="Martha John"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/conversationDesc"
@@ -52,20 +60,12 @@
                 android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="Hey, how have you been?"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/pinIcon"
-            android:layout_width="40dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="2.5dp"
-            android:padding="5dp"
-            android:src="@drawable/ic_unstar" />
 
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.cardview.widget.CardView>

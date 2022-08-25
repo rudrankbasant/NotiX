@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable-anydpi-v24/ic_x.xml" value="0.2085" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable-v24/card_bg.xml" value="0.2295" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/back_calender_arrow.xml" value="0.207" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/calendar_date_bg.xml" value="0.2295" />
@@ -14,8 +15,17 @@
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_calendar_arrow_forward.xml" value="0.207" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_calender_arrow_back.xml" value="0.207" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_calender_arrow_forward.xml" value="0.207" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_dot.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_settings.xml" value="0.2035" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_star.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_unstar.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_x.xml" value="0.176" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/ic_x2.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/recents_card.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/drawable/wallpaper.xml" value="0.2085" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_history.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/activity_transactions.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/card_view.xml" value="0.2" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_analytics.xml" value="0.25" />
@@ -26,14 +36,19 @@
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_saved_notifications.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_spam.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_transactions.xml" value="0.25" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/item_chat_msg.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_analytics.xml" value="0.536" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/fragment_whitelist.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/item_chat_msg.xml" value="0.264" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/item_chat_msg_bubble.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_analytics.xml" value="0.264" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_calendar_date.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_conversations.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_history.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_transactions.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/itemview_whitelist.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/rounded_edittext.xml" value="0.18671875" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/layout/shadow_background.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/NotiX/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2085" />
       </map>
     </option>
   </component>

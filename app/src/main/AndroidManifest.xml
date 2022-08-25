@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dscvit.notix">
 
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".di.NotixApplication"
@@ -18,14 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotiX">
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true">
+            android:name=".ui.SplashScreen"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true" />
 
         <service
             android:name=".services.NotificationListener"
@@ -38,22 +42,11 @@
 
             <meta-data
                 android:name="android.service.notification.default_filter_types"
-                android:value="conversations|alerting" />
-            <meta-data
-                android:name="android.service.notification.disabled_filter_types"
-                android:value="ongoing|silent" />
+                android:value="conversations|alerting|ongoing|silent" />
+<!--            <meta-data-->
+<!--                android:name="android.service.notification.disabled_filter_types"-->
+<!--                android:value="ongoing|silent" />-->
         </service>
-
-        <service android:name=".services.MyForegroundService"
-            android:enabled="true"/>
-
-        <receiver
-            android:name=".receivers.MySMSBroadcastReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

@@ -4,11 +4,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.dscvit.notix.model.NotificationData
 import com.dscvit.notix.model.TransactionData
+import com.dscvit.notix.model.WhiteListData
 
 
 @Database(
-    entities = [NotificationData::class, TransactionData::class],
-    version = 1,
+    entities = [NotificationData::class, TransactionData::class, WhiteListData::class],
+    version = 2,
     exportSchema = false
 )
 abstract class NotixDatabase : RoomDatabase() {

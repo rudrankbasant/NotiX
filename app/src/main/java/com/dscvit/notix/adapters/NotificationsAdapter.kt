@@ -3,6 +3,7 @@ package com.dscvit.notix.adapters
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dscvit.notix.R
 import com.dscvit.notix.model.NotificationData
+import java.lang.Exception
 
 
 class NotificationsAdapter(
@@ -37,16 +39,26 @@ class NotificationsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var pkgArray = allDayNotifications[position].pkgName.split(".").toTypedArray()
-        holder.appName.text = pkgArray[pkgArray.size - 1]
+        // var pkgArray = allDayNotifications[position].pkgName.split(".").toTypedArray()
+        //holder.appName.text = pkgArray[pkgArray.size - 1]
+
+        val pkgName = allDayNotifications[position].pkgName
+        val packageManager = context.packageManager
+        holder.appName.text = try {
+            packageManager.getApplicationLabel(packageManager.getApplicationInfo(pkgName, PackageManager.GET_META_DATA))
+        }catch (e:Exception){
+            Log.e("Application Name not found", e.toString())
+        }.toString()
+
+
         holder.title.text = allDayNotifications[position].title
         holder.description.text = allDayNotifications[position].desc
         holder.time.text = allDayNotifications[position].postedTime.slice(0..4)
 
-        if(allDayNotifications[position].desc?.contains("x.gdscSender.x") == true){
+        if (allDayNotifications[position].desc?.contains("x.gdscSender.x") == true) {
             val seperatedDesc = allDayNotifications[position].desc?.split("x.gdscSender.x")
             holder.description.text = seperatedDesc?.get(0)
-        }else{
+        } else {
             holder.description.text = allDayNotifications[position].desc
         }
 

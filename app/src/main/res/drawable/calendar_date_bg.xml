@@ -8,7 +8,7 @@
     <corners android:radius="100dip" />
     <size
         android:width="120dp"
-        android:height="180dp"/>
+        android:height="180dp" />
     <padding
         android:bottom="0dip"
         android:left="0dip"

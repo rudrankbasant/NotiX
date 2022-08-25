@@ -72,7 +72,7 @@
         android:id="@+id/savedNotifications"
         android:name="com.dscvit.notix.ui.history.SavedNotifications"
         android:label="fragment_saved_notifications"
-        tools:layout="@layout/fragment_saved_notifications" >
+        tools:layout="@layout/fragment_saved_notifications">
         <action
             android:id="@+id/action_savedNotifications_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -81,18 +81,30 @@
         android:id="@+id/spamFragment"
         android:name="com.dscvit.notix.ui.spam.SpamFragment"
         android:label="fragment_spam"
-        tools:layout="@layout/fragment_spam" >
+        tools:layout="@layout/fragment_spam">
         <action
             android:id="@+id/action_spamFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_spamFragment_to_whitelistFragment"
+            app:destination="@id/whitelistFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatMessages"
         android:name="com.dscvit.notix.ui.conversations.ChatMessages"
         android:label="fragment_chat_messages"
-        tools:layout="@layout/fragment_chat_messages" >
+        tools:layout="@layout/fragment_chat_messages">
         <action
             android:id="@+id/action_chatMessages_to_conversationsFragment"
             app:destination="@id/conversationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whitelistFragment"
+        android:name="com.dscvit.notix.ui.spam.WhitelistFragment"
+        android:label="fragment_whitelist"
+        tools:layout="@layout/fragment_whitelist" >
+        <action
+            android:id="@+id/action_whitelistFragment_to_spamFragment"
+            app:destination="@id/spamFragment" />
     </fragment>
 </navigation>

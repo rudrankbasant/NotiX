@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class CalenderUtils {
     public static LocalDate selectedDate;
 
-    public static String monthYearFromDate(LocalDate date)
-    {
+    public static String monthYearFromDate(LocalDate date) {
         DateTimeFormatter formatter = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
@@ -20,8 +19,7 @@ public class CalenderUtils {
         return null;
     }
 
-    public static ArrayList<LocalDate> daysInMonthArray(LocalDate date)
-    {
+    public static ArrayList<LocalDate> daysInMonthArray(LocalDate date) {
         ArrayList<LocalDate> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = null;
 
@@ -31,16 +29,15 @@ public class CalenderUtils {
 
             LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
             int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
-            for(int i = 1; i <= 42; i++)
-            {
-                if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)
+            for (int i = 1; i <= 42; i++) {
+                if (i <= dayOfWeek || i > daysInMonth + dayOfWeek)
                     daysInMonthArray.add(null);
                 else
-                    daysInMonthArray.add(LocalDate.of(selectedDate.getYear(),selectedDate.getMonth(),i - dayOfWeek));
+                    daysInMonthArray.add(LocalDate.of(selectedDate.getYear(), selectedDate.getMonth(), i - dayOfWeek));
             }
         }
 
-        return  daysInMonthArray;
+        return daysInMonthArray;
     }
 
     /*public static ArrayList<LocalDate> daysInWeekArray(LocalDate selectedDate)

@@ -20,8 +20,7 @@ class ConversationsAdapter(
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val username = itemView.findViewById<TextView>(R.id.conversationName)
         val desc = itemView.findViewById<TextView>(R.id.conversationDesc)
-        val pinButton = itemView.findViewById<ImageView>(R.id.pinIcon)
-        val userIcon = itemView.findViewById<ImageView>(R.id.conversDisplayPicture)
+        //val userIcon = itemView.findViewById<ImageView>(R.id.conversDisplayPicture)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,16 +31,15 @@ class ConversationsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.username.text = allConversations[position].title
-        if(allConversations[position].desc?.contains("x.gdscSender.x") == true){
+        if (allConversations[position].desc?.contains("x.gdscSender.x") == true) {
             val seperatedDesc = allConversations[position].desc?.split("x.gdscSender.x")
             holder.desc.text = seperatedDesc?.get(0)
-        }else{
+        } else {
             holder.desc.text = allConversations[position].desc
         }
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             conversationsClickInterface.onConversationsClick(allConversations[position])
         }
-
 
 
     }
@@ -57,6 +55,6 @@ class ConversationsAdapter(
     }
 }
 
-interface  ConversationsClickInterface{
-    fun onConversationsClick(selectedConversation : NotificationData)
+interface ConversationsClickInterface {
+    fun onConversationsClick(selectedConversation: NotificationData)
 }

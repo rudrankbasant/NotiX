@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
+    android:layout_marginStart="2dp"
     android:layout_marginTop="10dp"
-    android:layout_marginEnd="10dp"
+    android:layout_marginEnd="2dp"
+    app:cardBackgroundColor="@color/bg_color"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +56,7 @@
                     android:fontFamily="@font/opensans_bold"
                     android:singleLine="true"
                     android:text="SnapChat"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <ImageView
                     android:layout_width="7dp"
@@ -69,6 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/opensans_regular"
                     android:singleLine="true"
                     android:text="10:55 PM"
@@ -85,7 +87,7 @@
                 android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="Title"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -99,7 +101,7 @@
                 android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="Description"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

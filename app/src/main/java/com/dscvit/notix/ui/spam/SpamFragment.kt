@@ -1,10 +1,11 @@
 package com.dscvit.notix.ui.spam
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,15 @@ class SpamFragment : Fragment(), UpDateNotificationInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val statusBar = context?.let { ContextCompat.getColor(it, R.color.bg_color2) }
+        if(statusBar!=null){
+            activity?.window?.statusBarColor = statusBar
+        }
+
+        binding.spamSettings.setOnClickListener {
+            view.findNavController().navigate(R.id.action_spamFragment_to_whitelistFragment)
+        }
+
         binding.spamBackButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_spamFragment_to_homeFragment)
         }
@@ -47,7 +57,13 @@ class SpamFragment : Fragment(), UpDateNotificationInterface {
 
         viewModel.allSpam.observe(viewLifecycleOwner) { list ->
             list?.let {
-                spamRVAdapter?.updateList(list.reversed())
+                if(list.isEmpty()){
+                    binding.defaultSpamText.visibility  = View.VISIBLE
+                }else{
+                    binding.defaultSpamText.visibility = View.GONE
+                    spamRVAdapter?.updateList(list.reversed())
+                }
+
             }
         }
     }
