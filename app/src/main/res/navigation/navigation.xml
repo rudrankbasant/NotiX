@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_history">
         <action
             android:id="@+id/action_historyFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -21,22 +23,34 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/historyFragment"
+            app:popUpTo="@id/historyFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_homeFragment_to_analyticsFragment"
-            app:destination="@id/analyticsFragment" />
+            app:destination="@id/analyticsFragment"
+            app:popUpTo="@id/analyticsFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_homeFragment_to_conversationsFragment"
-            app:destination="@id/conversationsFragment" />
+            app:destination="@id/conversationsFragment"
+            app:popUpTo="@id/conversationsFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_homeFragment_to_transactionsFragment"
-            app:destination="@id/transactionsFragment" />
+            app:destination="@id/transactionsFragment"
+            app:popUpTo="@id/transactionsFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_homeFragment_to_spamFragment"
-            app:destination="@id/spamFragment" />
+            app:destination="@id/spamFragment"
+            app:popUpTo="@id/spamFragment"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_homeFragment_to_savedNotifications"
-            app:destination="@id/savedNotifications" />
+            app:destination="@id/savedNotifications"
+            app:popUpTo="@id/savedNotifications"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/analyticsFragment"
@@ -45,7 +59,9 @@
         tools:layout="@layout/fragment_analytics">
         <action
             android:id="@+id/action_analyticsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/conversationsFragment"
@@ -54,10 +70,14 @@
         tools:layout="@layout/fragment_conversations">
         <action
             android:id="@+id/action_conversationsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_conversationsFragment_to_chatMessages"
-            app:destination="@id/chatMessages" />
+            app:destination="@id/chatMessages"
+            app:popUpTo="@id/chatMessages"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/transactionsFragment"
@@ -66,7 +86,9 @@
         tools:layout="@layout/fragment_transactions">
         <action
             android:id="@+id/action_transactionsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/savedNotifications"
@@ -75,7 +97,9 @@
         tools:layout="@layout/fragment_saved_notifications">
         <action
             android:id="@+id/action_savedNotifications_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/spamFragment"
@@ -84,10 +108,14 @@
         tools:layout="@layout/fragment_spam">
         <action
             android:id="@+id/action_spamFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/action_spamFragment_to_whitelistFragment"
-            app:destination="@id/whitelistFragment" />
+            app:destination="@id/whitelistFragment"
+            app:popUpTo="@id/whitelistFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/chatMessages"
@@ -96,7 +124,9 @@
         tools:layout="@layout/fragment_chat_messages">
         <action
             android:id="@+id/action_chatMessages_to_conversationsFragment"
-            app:destination="@id/conversationsFragment" />
+            app:destination="@id/conversationsFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/whitelistFragment"
@@ -105,6 +135,8 @@
         tools:layout="@layout/fragment_whitelist" >
         <action
             android:id="@+id/action_whitelistFragment_to_spamFragment"
-            app:destination="@id/spamFragment" />
+            app:destination="@id/spamFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"/>
     </fragment>
 </navigation>

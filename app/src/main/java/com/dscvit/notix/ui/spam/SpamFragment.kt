@@ -1,9 +1,12 @@
 package com.dscvit.notix.ui.spam
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -64,6 +67,35 @@ class SpamFragment : Fragment(), UpDateNotificationInterface {
                     spamRVAdapter?.updateList(list.reversed())
                 }
 
+            }
+        }
+
+        val sharedPref = context?.getSharedPreferences("spam_switch", Context.MODE_PRIVATE)
+        val editor = sharedPref?.edit()
+
+        //getting values
+        val spamToggle = sharedPref?.getString("switch_toggle","true")
+        binding.spamSwitch.isChecked = spamToggle=="true"
+
+        //setting values
+        binding.spamSwitch.setOnClickListener{view ->
+
+            val switchView = view as SwitchCompat
+            when (switchView.isChecked) {
+                true -> {
+                    Toast.makeText(activity, "Spam Notifications will be removed from status bar.", Toast.LENGTH_LONG).show()
+                    editor?.apply {
+                        putString("switch_toggle", "true")
+                        apply()
+                    }
+                }
+                false -> {
+                    Toast.makeText(activity, "No Spam Notifications will be removed from status bar.", Toast.LENGTH_LONG).show()
+                    editor?.apply {
+                        putString("switch_toggle", "false")
+                        apply()
+                    }
+                }
             }
         }
     }

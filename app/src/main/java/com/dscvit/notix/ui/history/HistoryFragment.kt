@@ -16,6 +16,7 @@ import com.dscvit.notix.adapters.OpenHistoryPage
 import com.dscvit.notix.adapters.UpDateNotificationInterface
 import com.dscvit.notix.databinding.FragmentHistoryBinding
 import com.dscvit.notix.model.NotificationData
+import com.dscvit.notix.ui.home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,8 +45,9 @@ class HistoryFragment : Fragment(), UpDateNotificationInterface {
 
 
         binding.historyBackButton.setOnClickListener {
-            view.findNavController().navigate(R.id.action_historyFragment_to_homeFragment)
+            view.findNavController().navigate(HistoryFragmentDirections.actionHistoryFragmentToHomeFragment())
         }
+
 
 
         //History Recycler View

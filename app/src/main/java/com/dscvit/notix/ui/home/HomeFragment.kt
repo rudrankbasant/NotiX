@@ -112,6 +112,9 @@ class HomeFragment : Fragment(), UpDateNotificationInterface, OpenHistoryPage {
             }
         }
 
+        binding.viewFullHistoryTV.setOnClickListener {
+            view.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHistoryFragment())
+        }
 
         binding.analyticsCardView.setOnClickListener {
             view.findNavController().navigate(R.id.action_homeFragment_to_analyticsFragment)
@@ -130,7 +133,7 @@ class HomeFragment : Fragment(), UpDateNotificationInterface, OpenHistoryPage {
         }
 
         binding.recentNotificationsCard.setOnClickListener {
-            view.findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+            view.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHistoryFragment())
         }
 
 

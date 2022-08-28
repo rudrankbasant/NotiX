@@ -120,10 +120,16 @@ class NotificationListener :
         newNotification.notification.getLargeIcon()
         // Classify the notification
         var spamScore = 0.0f
-
-        if (newNotification.packageName != "com.whatsapp") {
-            spamScore = spamClassifyMessage(this, message)
+        val sharedPref = getSharedPreferences("spam_switch", Context.MODE_PRIVATE)
+        val spamSwitchToggle = sharedPref.getString("switch_toggle", "true")
+        if(spamSwitchToggle=="true"){
+            if (newNotification.packageName != "com.whatsapp") {
+                spamScore = spamClassifyMessage(this, message)
+            }
+        }else{
+            spamScore=0.0f
         }
+
         val isSpam = isSpam(spamScore)
 
 
@@ -200,6 +206,8 @@ class NotificationListener :
             ) {
                 whatsappConditions = false
             }
+        }else{
+                whatsappConditions = false
         }
 
         if (whatsappConditions && isNotNotixNotification) {
