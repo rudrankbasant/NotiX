@@ -36,7 +36,7 @@
 		<td>
 		Rudrank Basant
 		<p align="center">
-			<img src = "https://avatars.githubusercontent.com/u/85751479?s=460&u=3512e6223472e97a050f292478d125602c371fec&v=4" width="150" height="150" alt="Yajat Malhotra">
+			<img src = "https://avatars.githubusercontent.com/u/85751479?v=4" width="150" height="150" alt="Yajat Malhotra">
 		</p>
 			<p align="center">
 				<a href = "https://github.com/rudrankbasant">
